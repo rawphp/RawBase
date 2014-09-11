@@ -1,0 +1,25 @@
+{
+    "name": "rawphp/raw-base",
+    "type": "library",
+    "description": "RawBase provides base components for RawPHP Framework and other applications.",
+    "keywords": [ "base" ],
+    "homepage": "http://rawphp.org",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tom Kaczocha",
+            "email": "tom@rawphp.org"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "1.*"
+    },
+    "autoload": {
+        "classmap": [
+            "lib/"
+        ]
+    }
+}
