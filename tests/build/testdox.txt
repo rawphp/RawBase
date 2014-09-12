@@ -1,0 +1,12 @@
+RawPHP\RawBase\Component
+ [x] Add action
+ [x] Add action with priority
+ [x] Remove action
+ [x] Run action
+ [x] Add filter
+ [x] Add filter with priority
+ [x] Remove filter
+ [x] Filter
+ [x] Filter twice
+ [x] Filter returns false result is accepted
+

@@ -26,60 +26,15 @@
  * PHP version 5.4
  * 
  * @category  PHP
- * @package   RawPHP/RawBase/Models
+ * @package   RawPHP/RawBase
  * @author    Tom Kaczohca <tom@rawphp.org>
  * @copyright 2014 Tom Kaczocha
  * @license   http://rawphp.org/license.txt MIT
  * @link      http://rawphp.org/
  */
 
-namespace RawPHP\RawBase\Models;
+defined( 'DS' ) || define( 'DS', DIRECTORY_SEPARATOR );
 
-use RawPHP\RawBase\Component;
+require_once dirname( dirname( __FILE__ ) ) . DS . 'vendor' . DS . 'autoload.php';
 
-/**
- * Base class for all models.
- * 
- * @category  PHP
- * @package   RawPHP/RawBase/Models
- * @author    Tom Kaczohca <tom@rawphp.org>
- * @copyright 2014 Tom Kaczocha
- * @license   http://rawphp.org/license.txt MIT
- * @link      http://rawphp.org/
- */
-class Model extends Component
-{
-    public $id = 0;
-    
-    /**
-     * Model constructor.
-     * 
-     * @param array $config configuration array
-     */
-    public function __construct( $config = array() )
-    {
-        $this->init( $config );
-    }
-    
-    /**
-     * Initialises the model.
-     * 
-     * Do not call <code>parent::init()</code> on the model. It is already
-     * being called by the constructor.
-     * 
-     * @param array $config configuration array
-     * 
-     * @action ON_MODEL_INIT_ACTION
-     */
-    public function init( $config )
-    {
-        if ( isset( $config[ 'id' ] ) )
-        {
-            $this->id = ( int )$config[ 'id' ];
-        }
-        
-        $this->doAction( self::ON_MODEL_INIT_ACTION );
-    }
-    
-    const ON_MODEL_INIT_ACTION = 'on_init_model_action';
-}
+echo PHP_EOL . PHP_EOL . '************* BOOTSTRAP ********************' . PHP_EOL . PHP_EOL;
