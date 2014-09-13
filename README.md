@@ -2,7 +2,7 @@
 # RawBase - Base Classes for PHP Applications
 
 ## Package Features
-
+- The Component class offers a hook system that can be implemented by all subclasses.
 - Static utility methods to dump arrays and objects for debugging
 - Base Model class for other application models
 
@@ -57,3 +57,6 @@ Please submit bug reports, suggestions and pull requests to the [GitHub issue tr
 
 #### 11-09-2014
 - Initial Code Commit
+
+#### 13-09-2014
+- Removed init() call from Component constructor

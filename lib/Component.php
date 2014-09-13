@@ -64,16 +64,6 @@ class Component
     public $filters          = array( );
     
     /**
-     * Component Constructor.
-     * 
-     * @param array $config configuration array
-     */
-    public function __construct( $config = array() )
-    {
-        $this->init( $config );
-    }
-    
-    /**
      * Initialises the component.
      * 
      * @param array $config configuration array
