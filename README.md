@@ -11,12 +11,12 @@
 ### Composer
 RawBase is available via [Composer/Packagist](https://packagist.org/packages/rawphp/raw-base).
 
-Add `"rawphp/raw-base": "dev-master"` to the require block in your composer.json and then run `composer install`.
+Add `"rawphp/raw-base": "0.1.0"` to the require block in your composer.json and then run `composer install`.
 
 ```json
 {
         "require": {
-            "rawphp/raw-base": "dev-master"
+            "rawphp/raw-base": "0.1.0"
         }
 }
 ```
@@ -24,7 +24,7 @@ Add `"rawphp/raw-base": "dev-master"` to the require block in your composer.json
 You can also simply run the following from the command line:
 
 ```sh
-composer require rawphp/raw-base "dev-master"
+composer require rawphp/raw-base "0.1.0"
 ```
 
 ### Tarball
@@ -55,8 +55,8 @@ Please submit bug reports, suggestions and pull requests to the [GitHub issue tr
 
 ## Changelog
 
-#### 11-09-2014
-- Initial Code Commit
-
 #### 13-09-2014
 - Removed init() call from Component constructor
+
+#### 11-09-2014
+- Initial Code Commit
