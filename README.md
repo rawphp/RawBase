@@ -11,12 +11,12 @@
 ### Composer
 RawBase is available via [Composer/Packagist](https://packagist.org/packages/rawphp/raw-base).
 
-Add `"rawphp/raw-base": "0.2.0"` to the require block in your composer.json and then run `composer install`.
+Add `"rawphp/raw-base": "0.*@dev"` to the require block in your composer.json and then run `composer install`.
 
 ```json
 {
         "require": {
-            "rawphp/raw-base": "0.2.0"
+            "rawphp/raw-base": "0.*@dev"
         }
 }
 ```
@@ -24,7 +24,7 @@ Add `"rawphp/raw-base": "0.2.0"` to the require block in your composer.json and 
 You can also simply run the following from the command line:
 
 ```sh
-composer require rawphp/raw-base "0.2.0"
+composer require rawphp/raw-base "0.*@dev"
 ```
 
 ### Tarball
@@ -54,6 +54,10 @@ This package is licensed under the [MIT](https://github.com/rawphp/RawBase/blob/
 Please submit bug reports, suggestions and pull requests to the [GitHub issue tracker](https://github.com/rawphp/RawBase/issues).
 
 ## Changelog
+
+#### 15-09-2014
+- Added .travis.yml for CI.
+- Updated composer version alias.
 
 #### 13-09-2014
 - Removed init() call from Component constructor
