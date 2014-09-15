@@ -1,6 +1,8 @@
 
 # RawBase - Base Classes for PHP Applications
 
+[![Build Status](https://travis-ci.org/rawphp/RawBase.svg?branch=master)](https://travis-ci.org/rawphp/RawBase)
+
 ## Package Features
 - The Component class offers a hook system that can be implemented by all subclasses.
 - Static utility methods to dump arrays and objects for debugging
