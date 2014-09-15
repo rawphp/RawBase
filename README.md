@@ -1,4 +1,3 @@
-
 # RawBase - Base Classes for PHP Applications
 
 [![Build Status](https://travis-ci.org/rawphp/RawBase.svg?branch=master)](https://travis-ci.org/rawphp/RawBase)
