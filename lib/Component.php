@@ -80,6 +80,9 @@ class Component
     /**
      * Initialises the component.
      * 
+     * NOTE: All components SHOULD call <code>init()</code>, even without
+     * passing a value.
+     * 
      * @param array $config configuration array
      * 
      * @filter ON_SET_LOG_FILTER(1)

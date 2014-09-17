@@ -73,6 +73,8 @@ class Model extends Component
      */
     public function init( $config )
     {
+        parent::init( $config );
+        
         if ( isset( $config[ 'id' ] ) )
         {
             $this->id = ( int )$config[ 'id' ];
