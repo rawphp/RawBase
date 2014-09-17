@@ -86,7 +86,7 @@ class Component
      * 
      * @action ON_COMPONENT_INIT_ACTION
      */
-    public function init( $config )
+    public function init( $config = NULL )
     {
         $this->config = $config;
         
