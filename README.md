@@ -1,6 +1,6 @@
-# RawBase - Base Classes for PHP Applications
+# RawBase - Base Classes for PHP Applications [![Build Status](https://travis-ci.org/rawphp/RawBase.svg?branch=master)](https://travis-ci.org/rawphp/RawBase)
 
-[![Build Status](https://travis-ci.org/rawphp/RawBase.svg?branch=master)](https://travis-ci.org/rawphp/RawBase)
+[![Latest Stable Version](https://poser.pugx.org/rawphp/raw-base/v/stable.svg)](https://packagist.org/packages/rawphp/raw-base) [![Total Downloads](https://poser.pugx.org/rawphp/raw-base/downloads.svg)](https://packagist.org/packages/rawphp/raw-base) [![Latest Unstable Version](https://poser.pugx.org/rawphp/raw-base/v/unstable.svg)](https://packagist.org/packages/rawphp/raw-base) [![License](https://poser.pugx.org/rawphp/raw-base/license.svg)](https://packagist.org/packages/rawphp/raw-base)
 
 ## Package Features
 - The Component class offers a hook system that can be implemented by all subclasses.
@@ -55,6 +55,9 @@ This package is licensed under the [MIT](https://github.com/rawphp/RawBase/blob/
 Please submit bug reports, suggestions and pull requests to the [GitHub issue tracker](https://github.com/rawphp/RawBase/issues).
 
 ## Changelog
+
+#### 17-09-2014
+- Added a `$log` member variable to Component class. This can host any logging class instance.
 
 #### 15-09-2014
 - Added .travis.yml for CI.

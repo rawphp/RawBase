@@ -51,6 +51,7 @@ class ComponentTest extends \PHPUnit_Framework_TestCase
      * @var Component
      */
     protected $component    = NULL;
+    
     private $_done          = FALSE;
     
     /**
@@ -222,6 +223,20 @@ class ComponentTest extends \PHPUnit_Framework_TestCase
     }
     
     /**
+     * Test setting log with filter
+     */
+    public function testSettingLogWithFilter( )
+    {
+        $this->assertNull( $this->component->log );
+        
+        $this->component->addFilter( Component::ON_SET_LOG_FILTER, array( $this, 'setLogCallback' ) );
+        
+        $this->component->init( array( ) );
+        
+        $this->assertNotNull( $this->component->log );
+    }
+    
+    /**
      * Helper method to add action.
      * 
      * @param string $action   action name
@@ -301,6 +316,18 @@ class ComponentTest extends \PHPUnit_Framework_TestCase
     public function filterSecond( $value )
     {
         return $value . ' twice';
+    }
+    
+    /**
+     * Helper class to set a log on filter callback.
+     * 
+     * @param object $log the log which will always be NULL
+     * 
+     * @return \stdClass the test log object
+     */
+    public function setLogCallback( $log )
+    {
+        return new \stdClass();
     }
     
     /**

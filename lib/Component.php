@@ -38,6 +38,15 @@ namespace RawPHP\RawBase;
 /**
  * Base class for all other classes in RawPHP.
  * 
+ * This class contains a <code>$log</code> member variable that can
+ * be any type of logging class. There are two ways to add a log:
+ * 
+ *  1) Set the log explicitly on the variable, or
+ * 
+ *  2) Hook onto the Component::ON_SET_LOG_FILTER and provide a callback
+ *     that will assign a log instance on calling <code>init( )</code>.
+ *     This means that the filter must be set before calling <code>init( )</code>
+ * 
  * @category  PHP
  * @package   RawPHP/RawBase
  * @author    Tom Kaczocha <tom@rawphp.org>
@@ -47,7 +56,12 @@ namespace RawPHP\RawBase;
  */
 class Component
 {
-    public $config;
+    /**
+     * @var array
+     */
+    public $config          = NULL;
+    
+    public $log             = NULL;
     
     /**
      * Registered actions for component.
@@ -68,11 +82,15 @@ class Component
      * 
      * @param array $config configuration array
      * 
+     * @filter ON_SET_LOG_FILTER(1)
+     * 
      * @action ON_COMPONENT_INIT_ACTION
      */
     public function init( $config )
     {
         $this->config = $config;
+        
+        $this->log = $this->filter( self::ON_SET_LOG_FILTER, NULL );
         
         $this->doAction( self::ON_COMPONENT_INIT_ACTION );
     }
@@ -311,5 +329,9 @@ class Component
         echo '</pre>';
     }
     
-    const ON_COMPONENT_INIT_ACTION = 'on_component_init_action';
+    // actions
+    const ON_COMPONENT_INIT_ACTION  = 'on_component_init_action';
+    
+    // filters
+    const ON_SET_LOG_FILTER         = 'on_set_log_filter';
 }
