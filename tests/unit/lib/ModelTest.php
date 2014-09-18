@@ -33,9 +33,9 @@
  * @link      http://rawphp.org/
  */
 
-namespace RawPHP\RawBase\Models;
+namespace RawPHP\RawBase;
 
-use RawPHP\RawBase\Models\Model;
+use RawPHP\RawBase\Model;
 
 /**
  * Model tests.
