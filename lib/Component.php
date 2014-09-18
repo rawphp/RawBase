@@ -60,22 +60,26 @@ class Component
      * @var array
      */
     public $config          = NULL;
-    
+    /**
+     * @var object
+     */
     public $log             = NULL;
-    
     /**
      * Registered actions for component.
      * 
      * @var array list of actions
      */
-    public $actions          = array( );
-    
+    public $actions         = array( );
     /**
      * Registered filters for component.
      * 
      * @var array list of filters
      */
-    public $filters          = array( );
+    public $filters         = array( );
+    /**
+     * @var bool
+     */
+    public $debug           = FALSE;
     
     /**
      * Initialises the component.
@@ -92,6 +96,11 @@ class Component
     public function init( $config = NULL )
     {
         $this->config = $config;
+        
+        if ( isset( $config[ 'debug' ] ) )
+        {
+            $this->debug = $config[ 'debug' ];
+        }
         
         $this->log = $this->filter( self::ON_SET_LOG_FILTER, NULL );
         
@@ -121,6 +130,14 @@ class Component
         {
             usort( $this->actions[ $action ], array( $this, '_sortByPriority' ) );
         }
+        
+        if ( $this->debug )
+        {
+            echo PHP_EOL . '+ACTION: ' . $action . ' -> ' 
+                    . $this->_serializeCallback( $callback ) 
+                    . ' + Priority: ' . $priority
+                    . PHP_EOL;
+        }
     }
     
     /**
@@ -147,6 +164,14 @@ class Component
                         {
                             unset( $this->actions[ $key ][ $i ] );
                             
+                            if ( $this->debug )
+                            {
+                                echo PHP_EOL . '-ACTION: ' . $action . ' -> ' 
+                                        . $this->_serializeCallback( $callback )
+                                        . ' + Priority: ' . $call[ 'priority' ]
+                                        . PHP_EOL;
+                            }
+        
                             return TRUE;
                         }
                     }
@@ -172,6 +197,14 @@ class Component
             foreach( $this->actions[ $action ] as $callback )
             {
                 call_user_func_array( $callback[ 'callback' ], $params );
+                
+                if ( $this->debug )
+                {
+                    echo PHP_EOL . '->ACTION: ' . $action . ' -> ' 
+                            . $this->_serializeCallback( $callback[ 'callback' ] )
+                            . ' + Priority: ' . $callback[ 'priority' ]
+                            . PHP_EOL;
+                }
             }
         }
     }
@@ -199,6 +232,13 @@ class Component
         {
             usort( $this->filters[ $filter ], array( $this, '_sortByPriority' ) );
         }
+        
+        if ( $this->debug )
+        {
+            echo PHP_EOL . '+FILTER: ' . $filter . ' -> ' 
+                    . $this->_serializeCallback( $callback ) 
+                    . ' + Priority: ' . $priority . PHP_EOL;
+        }
     }
     
     /**
@@ -225,6 +265,14 @@ class Component
                         {
                             unset( $this->filters[ $key ][ $i ] );
                             
+                            if ( $this->debug )
+                            {
+                                echo PHP_EOL . '-FILTER: ' . $filter . ' -> ' 
+                                        . $this->_serializeCallback( $callback )
+                                        . ' + Priority: ' . $call[ 'priority' ]
+                                        . PHP_EOL;
+                            }
+        
                             return TRUE;
                         }
                     }
@@ -256,6 +304,14 @@ class Component
             foreach( $this->filters[ $filter ] as $callback )
             {
                 $argList[ 0 ] = call_user_func_array( $callback[ 'callback' ], $argList );
+                
+                if ( $this->debug )
+                {
+                    echo PHP_EOL . '->FILTER: ' . $filter . ' -> ' 
+                            . $this->_serializeCallback( $callback[ 'callback' ] ) 
+                            . ' + Priority: ' . $callback[ 'priority' ]
+                            . PHP_EOL;
+                }
             }
         }
         
@@ -306,6 +362,25 @@ class Component
         }
         
         return FALSE;
+    }
+    
+    /**
+     * Helper method to serialize a callback.
+     * 
+     * @param mixed $callback the callback string or array
+     * 
+     * @return string the serialized callback
+     */
+    private function _serializeCallback( $callback )
+    {
+        $retVal = $callback;
+        
+        if ( is_array( $callback ) && 2 === count( $callback ) )
+        {
+            $retVal = get_class( $callback[ 0 ] ) . '/' . $callback[ 1 ];
+        }
+        
+        return $retVal;
     }
     
     /**

@@ -60,6 +60,7 @@ class ComponentTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->component = new Component( );
+        $this->component->init( array( 'debug' => TRUE ) );
         $this->_done = FALSE;
     }
     
