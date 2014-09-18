@@ -59,6 +59,7 @@ Please submit bug reports, suggestions and pull requests to the [GitHub issue tr
 #### 18-09-2014
 - Added debug ability to Component actions and filters - enable debug mode by passing debug => true to Component in `init()`.
 - Moved RawException from RawPHP\RawBase\Exceptions to RawPHP\RawBase namespace.
+- Moved Model from RawPHP\RawBase\Models to RawPHP\RawBase namespace.
 
 #### 17-09-2014
 - Added a `$log` member variable to Component class. This can host any logging class instance.

@@ -26,41 +26,62 @@
  * PHP version 5.4
  * 
  * @category  PHP
- * @package   RawPHP/RawBase/Models/Tests
+ * @package   RawPHP/RawBase
  * @author    Tom Kaczohca <tom@rawphp.org>
  * @copyright 2014 Tom Kaczocha
  * @license   http://rawphp.org/license.txt MIT
  * @link      http://rawphp.org/
  */
 
-namespace RawPHP\RawBase\Models;
+namespace RawPHP\RawBase;
 
-use RawPHP\RawBase\Models\Model;
+use RawPHP\RawBase\Component;
 
 /**
- * Model tests.
+ * Base class for all models.
  * 
  * @category  PHP
- * @package   RawPHP/RawBase/Models/Tests
- * @author    Tom Kaczocha <tom@rawphp.org>
+ * @package   RawPHP/RawBase
+ * @author    Tom Kaczohca <tom@rawphp.org>
  * @copyright 2014 Tom Kaczocha
  * @license   http://rawphp.org/license.txt MIT
  * @link      http://rawphp.org/
  */
-class ModelTest extends \PHPUnit_Framework_TestCase
+class Model extends Component
 {
-    /**
-     * @var Model
-     */
-    protected $model = NULL;
+    public $id = 0;
     
     /**
-     * Test adding an action.
+     * Model constructor.
+     * 
+     * @param array $config configuration array
      */
-    public function testModelInstantiation( )
+    public function __construct( $config = array() )
     {
-        $this->model = new Model( );
-        
-        $this->assertNotNull( $this->model );
+        $this->init( $config );
     }
+    
+    /**
+     * Initialises the model.
+     * 
+     * Do not call <code>parent::init()</code> on the model. It is already
+     * being called by the constructor.
+     * 
+     * @param array $config configuration array
+     * 
+     * @action ON_MODEL_INIT_ACTION
+     */
+    public function init( $config = NULL )
+    {
+        parent::init( $config );
+        
+        if ( isset( $config[ 'id' ] ) )
+        {
+            $this->id = ( int )$config[ 'id' ];
+        }
+        
+        $this->doAction( self::ON_MODEL_INIT_ACTION );
+    }
+    
+    const ON_MODEL_INIT_ACTION = 'on_init_model_action';
 }
