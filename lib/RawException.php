@@ -26,20 +26,20 @@
  * PHP version 5.4
  * 
  * @category  PHP
- * @package   RawPHP/RawBase/Exceptions
+ * @package   RawPHP/RawBase
  * @author    Tom Kaczohca <tom@rawphp.org>
  * @copyright 2014 Tom Kaczocha
  * @license   http://rawphp.org/license.txt MIT
  * @link      http://rawphp.org/
  */
 
-namespace RawPHP\RawBase\Exceptions;
+namespace RawPHP\RawBase;
 
 /**
  * Base exception for all others in the framework.
  * 
  * @category  PHP
- * @package   RawPHP/RawBase/Exceptions
+ * @package   RawPHP/RawBase
  * @author    Tom Kaczohca <tom@rawphp.org>
  * @copyright 2014 Tom Kaczocha
  * @license   http://rawphp.org/license.txt MIT
