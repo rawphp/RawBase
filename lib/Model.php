@@ -47,25 +47,12 @@ use RawPHP\RawBase\Component;
  * @license   http://rawphp.org/license.txt MIT
  * @link      http://rawphp.org/
  */
-class Model extends Component
+abstract class Model extends Component
 {
     public $id = 0;
     
     /**
-     * Model constructor.
-     * 
-     * @param array $config configuration array
-     */
-    public function __construct( $config = array() )
-    {
-        $this->init( $config );
-    }
-    
-    /**
      * Initialises the model.
-     * 
-     * Do not call <code>parent::init()</code> on the model. It is already
-     * being called by the constructor.
      * 
      * @param array $config configuration array
      * 

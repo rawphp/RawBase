@@ -35,8 +35,10 @@
 
 namespace RawPHP\RawBase;
 
+use RawPHP\RawBase\TestComponent;
+
 /**
- * Component tests.
+ * Component test class.
  * 
  * @category  PHP
  * @package   RawPHP/RawBase/Tests
@@ -48,7 +50,7 @@ namespace RawPHP\RawBase;
 class ComponentTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var Component
+     * @var TestService
      */
     protected $component    = NULL;
     
@@ -59,7 +61,7 @@ class ComponentTest extends \PHPUnit_Framework_TestCase
      */
     protected function setUp()
     {
-        $this->component = new Component( );
+        $this->component = new TestComponent( );
         $this->component->init( array( 'debug' => TRUE ) );
         $this->_done = FALSE;
     }

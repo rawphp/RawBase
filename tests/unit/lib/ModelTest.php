@@ -35,10 +35,10 @@
 
 namespace RawPHP\RawBase;
 
-use RawPHP\RawBase\Model;
+use RawPHP\RawBase\TestComponent;
 
 /**
- * Model tests.
+ * Model test class.
  * 
  * @category  PHP
  * @package   RawPHP/RawBase/Models/Tests
@@ -50,7 +50,7 @@ use RawPHP\RawBase\Model;
 class ModelTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var Model
+     * @var TestComponent
      */
     protected $model = NULL;
     
@@ -59,7 +59,7 @@ class ModelTest extends \PHPUnit_Framework_TestCase
      */
     public function testModelInstantiation( )
     {
-        $this->model = new Model( );
+        $this->model = new TestComponent( );
         
         $this->assertNotNull( $this->model );
     }

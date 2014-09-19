@@ -54,13 +54,17 @@ namespace RawPHP\RawBase;
  * @license   http://rawphp.org/license.txt MIT
  * @link      http://rawphp.org/
  */
-class Component
+abstract class Component
 {
     /**
+     * Component configuration array.
+     * 
      * @var array
      */
     public $config          = NULL;
     /**
+     * Component log.
+     * 
      * @var object
      */
     public $log             = NULL;
@@ -77,6 +81,8 @@ class Component
      */
     public $filters         = array( );
     /**
+     * Component debug flag.
+     * 
      * @var bool
      */
     public $debug           = FALSE;
