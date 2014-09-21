@@ -1,6 +1,9 @@
-# RawBase - Base Classes for PHP Applications [![Build Status](https://travis-ci.org/rawphp/RawBase.svg?branch=master)](https://travis-ci.org/rawphp/RawBase) [![Coverage Status](https://coveralls.io/repos/rawphp/RawBase/badge.png?branch=master)](https://coveralls.io/r/rawphp/RawBase?branch=master)
+# RawBase - Base Classes for PHP Applications 
 
-[![Latest Stable Version](https://poser.pugx.org/rawphp/raw-base/v/stable.svg)](https://packagist.org/packages/rawphp/raw-base) [![Total Downloads](https://poser.pugx.org/rawphp/raw-base/downloads.svg)](https://packagist.org/packages/rawphp/raw-base) [![Latest Unstable Version](https://poser.pugx.org/rawphp/raw-base/v/unstable.svg)](https://packagist.org/packages/rawphp/raw-base) [![License](https://poser.pugx.org/rawphp/raw-base/license.svg)](https://packagist.org/packages/rawphp/raw-base)
+[![Build Status](https://travis-ci.org/rawphp/RawBase.svg?branch=master)](https://travis-ci.org/rawphp/RawBase) [![Coverage Status](https://coveralls.io/repos/rawphp/RawBase/badge.png?branch=master)](https://coveralls.io/r/rawphp/RawBase?branch=master)
+[![Latest Stable Version](https://poser.pugx.org/rawphp/raw-base/v/stable.svg)](https://packagist.org/packages/rawphp/raw-base) [![Total Downloads](https://poser.pugx.org/rawphp/raw-base/downloads.svg)](https://packagist.org/packages/rawphp/raw-base)
+[![Latest Unstable Version](https://poser.pugx.org/rawphp/raw-base/v/unstable.svg)](https://packagist.org/packages/rawphp/raw-base) [![License](https://poser.pugx.org/rawphp/raw-base/license.svg)](https://packagist.org/packages/rawphp/raw-base)
+
 
 ## Package Features
 - The Component class offers a hook system that can be implemented by all subclasses.
