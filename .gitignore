@@ -7,3 +7,4 @@ project.xml
 /composer.lock
 project.properties
 /tests/build/
+/docs/
