@@ -56,6 +56,9 @@ Please submit bug reports, suggestions and pull requests to the [GitHub issue tr
 
 ## Changelog
 
+#### 21-09-2014
+- Tested on PHP 5.3
+
 #### 18-09-2014
 - Added debug ability to Component actions and filters - enable debug mode by passing debug => true to Component in `init()`.
 - Moved RawException from RawPHP\RawBase\Exceptions to RawPHP\RawBase namespace.
