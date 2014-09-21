@@ -109,8 +109,6 @@ class ComponentTest extends \PHPUnit_Framework_TestCase
         $this->component->addAction( $action, array( $this, '' ),  1 );
         $this->component->addAction( $action, array( $this, '' ),  5 );
         
-        Component::arrayDump( $this->component->actions );
-        
         $this->assertEquals( 1,  $this->component->actions[ $action ][ 0 ][ 'priority' ] );
         $this->assertEquals( 5,  $this->component->actions[ $action ][ 1 ][ 'priority' ] );
         $this->assertEquals( 10, $this->component->actions[ $action ][ 2 ][ 'priority' ] );
