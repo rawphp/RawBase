@@ -360,11 +360,11 @@ abstract class Component
     {
         if ( is_array( $value ) )
         {
-            return ( count( $value ) > $index );
+            return ( count( $value ) > $index && $index >= 0 );
         }
         elseif ( is_string( $value ) )
         {
-            return ( strlen( $value ) > $index );
+            return ( strlen( $value ) > $index && $index >= 0 );
         }
         
         return FALSE;

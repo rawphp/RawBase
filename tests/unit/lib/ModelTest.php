@@ -35,7 +35,7 @@
 
 namespace RawPHP\RawBase;
 
-use RawPHP\RawBase\TestComponent;
+use RawPHP\RawBase\TestModel;
 
 /**
  * Model test class.
@@ -50,17 +50,47 @@ use RawPHP\RawBase\TestComponent;
 class ModelTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var TestComponent
+     * @var TestModel
      */
     protected $model = NULL;
     
     /**
-     * Test adding an action.
+     * Setup before each test.
+     */
+    public function setUp()
+    {
+        parent::setUp();
+        
+        $this->model = new TestModel( );
+    }
+    
+    /**
+     * Cleanup after each test.
+     */
+    public function tearDown()
+    {
+        parent::tearDown();
+        
+        $this->model = NULL;
+    }
+    
+    /**
+     * Test initialisating a model.
      */
     public function testModelInstantiation( )
     {
-        $this->model = new TestComponent( );
+        $this->model->init( );
         
         $this->assertNotNull( $this->model );
+    }
+    
+    /**
+     * Test initialising a model with configuration array.
+     */
+    public function testModelInstantiationWithConfig( )
+    {
+        $this->model->init( array( 'id' => 1 ) );
+        
+        $this->assertEquals( 1, $this->model->id );
     }
 }

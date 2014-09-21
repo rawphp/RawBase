@@ -99,6 +99,24 @@ class ComponentTest extends \PHPUnit_Framework_TestCase
     }
     
     /**
+     * Test adding actions and get them ordered by priority.
+     */
+    public function testAddThreeActionsWithPriorities( )
+    {
+        $action = 'test_action';
+        
+        $this->component->addAction( $action, array( $this, '' ), 10 );
+        $this->component->addAction( $action, array( $this, '' ),  1 );
+        $this->component->addAction( $action, array( $this, '' ),  5 );
+        
+        Component::arrayDump( $this->component->actions );
+        
+        $this->assertEquals( 1,  $this->component->actions[ $action ][ 0 ][ 'priority' ] );
+        $this->assertEquals( 5,  $this->component->actions[ $action ][ 1 ][ 'priority' ] );
+        $this->assertEquals( 10, $this->component->actions[ $action ][ 2 ][ 'priority' ] );
+    }
+    
+    /**
      * Test removing an action.
      */
     public function testRemoveAction( )
@@ -118,6 +136,16 @@ class ComponentTest extends \PHPUnit_Framework_TestCase
         $actions = $this->component->actions;
         
         $this->assertEquals( 0, count( $actions[ self::ON_AFTER_RUN_ACTION ] ) );
+    }
+    
+    /**
+     * Test removing an unknown/unset action.
+     */
+    public function testRemoveUnknownAction( )
+    {
+        $this->component->addAction( 'test_action', array( $this, '' ) );
+        
+        $this->assertFalse( $this->component->removeAction( 'unknown_action', array( $this, '' ) ) );
     }
     
     /**
@@ -181,6 +209,16 @@ class ComponentTest extends \PHPUnit_Framework_TestCase
     }
     
     /**
+     * Test removing an unknown/unset action.
+     */
+    public function testRemoveUnknownFilter( )
+    {
+        $this->component->addFilter( 'test_filter', array( $this, '' ) );
+        
+        $this->assertFalse( $this->component->removeFilter( 'unknown_filter', array( $this, '' ) ) );
+    }
+    
+    /**
      * Test running a filter.
      */
     public function testFilter( )
@@ -237,6 +275,39 @@ class ComponentTest extends \PHPUnit_Framework_TestCase
         $this->component->init( array( ) );
         
         $this->assertNotNull( $this->component->log );
+    }
+    
+    /**
+     * Test valid index.
+     * 
+     * @dataProvider indexDataProvider
+     */
+    public function testValidIndex( $array, $index, $result )
+    {
+        $this->assertEquals( $result, Component::validIndex( $index, $array ) );
+    }
+    
+    /**
+     * Data provider for testValidIndex method.
+     * 
+     * @return array the test data
+     */
+    public function indexDataProvider( )
+    {
+        return array( 
+            array( array( 1, 2 ), 0, TRUE ),
+            array( array( 1, 2 ), 1, TRUE ),
+            array( array( 1, 2 ), 2, FALSE ),
+            
+            array( array( 1, 2 ), -1, FALSE ),
+            
+            array( 'string', 0, TRUE ),
+            array( 'string', 5, TRUE ),
+            array( 'string', 6, FALSE ),
+            array( 'string', -1, FALSE ),
+            
+            array( new \stdClass(), 0, FALSE ),
+        );
     }
     
     /**

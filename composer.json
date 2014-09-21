@@ -19,7 +19,8 @@
         "phpunit/phpunit": "4.2.5",
         "squizlabs/php_codesniffer": "dev-master",
         "rawphp/raw-code-standards": "1.*@dev",
-        "phpdocumentor/phpdocumentor": "dev-master"
+        "phpdocumentor/phpdocumentor": "dev-master",
+		"satooshi/php-coveralls": "dev-master"
     },
     "autoload": {
         "classmap": [
