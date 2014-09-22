@@ -26,25 +26,25 @@
  * PHP version 5.3
  * 
  * @category  PHP
- * @package   RawPHP/RawBase
+ * @package   RawPHP/RawBase/Exceptions
  * @author    Tom Kaczohca <tom@rawphp.org>
  * @copyright 2014 Tom Kaczocha
  * @license   http://rawphp.org/license.txt MIT
  * @link      http://rawphp.org/
  */
 
-namespace RawPHP\RawBase;
+namespace RawPHP\RawBase\Exceptions;
 
 /**
- * Base exception for all others in the framework.
+ * Thrown if component initialization fails.
  * 
  * @category  PHP
- * @package   RawPHP/RawBase
+ * @package   RawPHP/RawBase/Exceptions
  * @author    Tom Kaczohca <tom@rawphp.org>
  * @copyright 2014 Tom Kaczocha
  * @license   http://rawphp.org/license.txt MIT
  * @link      http://rawphp.org/
  */
-class RawException extends \Exception
+class InitializationException extends RawException
 {
 }
