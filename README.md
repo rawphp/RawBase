@@ -15,12 +15,12 @@
 ### Composer
 RawBase is available via [Composer/Packagist](https://packagist.org/packages/rawphp/raw-base).
 
-Add `"rawphp/raw-base": "0.*@dev"` to the require block in your composer.json and then run `composer install`.
+Add `"rawphp/raw-base": "1.0.0-RC"` to the require block in your composer.json and then run `composer install`.
 
 ```json
 {
         "require": {
-            "rawphp/raw-base": "0.*@dev"
+            "rawphp/raw-base": "1.0.0-RC"
         }
 }
 ```
@@ -28,7 +28,7 @@ Add `"rawphp/raw-base": "0.*@dev"` to the require block in your composer.json an
 You can also simply run the following from the command line:
 
 ```sh
-composer require rawphp/raw-base "0.*@dev"
+composer require rawphp/raw-base "1.0.0-RC"
 ```
 
 ### Tarball
