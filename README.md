@@ -59,6 +59,9 @@ Please submit bug reports, suggestions and pull requests to the [GitHub issue tr
 
 ## Changelog
 
+#### 23-09-2014
+- Added missing InvalidModelException and NullValueException classes.
+
 #### 22-09-2014
 - Added InitializationException and NotImplementedException classes.
 - Moved exceptions into RawPHP\RawBase\Exceptions namespace.

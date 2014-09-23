@@ -26,71 +26,38 @@
  * PHP version 5.3
  * 
  * @category  PHP
- * @package   RawPHP/RawBase/Tests
+ * @package   RawPHP/RawBase/Exceptions/Tests
  * @author    Tom Kaczohca <tom@rawphp.org>
  * @copyright 2014 Tom Kaczocha
  * @license   http://rawphp.org/license.txt MIT
  * @link      http://rawphp.org/
  */
 
-namespace RawPHP\RawBase\Tests;
+namespace RawPHP\RawBase\Exceptions\Tests;
 
-use RawPHP\RawBase\TestModel;
+use RawPHP\RawBase\Exceptions\InitializationException;
 
 /**
- * Model test class.
+ * Initialization exception test class.
  * 
  * @category  PHP
- * @package   RawPHP/RawBase/Models/Tests
+ * @package   RawPHP/RawBase/Exceptions/Tests
  * @author    Tom Kaczocha <tom@rawphp.org>
  * @copyright 2014 Tom Kaczocha
  * @license   http://rawphp.org/license.txt MIT
  * @link      http://rawphp.org/
  */
-class ModelTest extends \PHPUnit_Framework_TestCase
+class InitializationExceptionTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var TestModel
+     * Test throwing the exception.
+     * 
+     * @expectedException RawPHP\RawBase\Exceptions\InitializationException
+     * 
+     * @throws InitializationException as a test
      */
-    protected $model = NULL;
-    
-    /**
-     * Setup before each test.
-     */
-    public function setUp()
+    public function testThrowException( )
     {
-        parent::setUp();
-        
-        $this->model = new TestModel( );
-    }
-    
-    /**
-     * Cleanup after each test.
-     */
-    public function tearDown()
-    {
-        parent::tearDown();
-        
-        $this->model = NULL;
-    }
-    
-    /**
-     * Test initialisating a model.
-     */
-    public function testModelInstantiation( )
-    {
-        $this->model->init( );
-        
-        $this->assertNotNull( $this->model );
-    }
-    
-    /**
-     * Test initialising a model with configuration array.
-     */
-    public function testModelInstantiationWithConfig( )
-    {
-        $this->model->init( array( 'id' => 1 ) );
-        
-        $this->assertEquals( 1, $this->model->id );
+        throw new InitializationException( );
     }
 }

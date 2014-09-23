@@ -26,71 +26,25 @@
  * PHP version 5.3
  * 
  * @category  PHP
- * @package   RawPHP/RawBase/Tests
+ * @package   RawPHP/RawBase/Exceptions
  * @author    Tom Kaczohca <tom@rawphp.org>
  * @copyright 2014 Tom Kaczocha
  * @license   http://rawphp.org/license.txt MIT
  * @link      http://rawphp.org/
  */
 
-namespace RawPHP\RawBase\Tests;
-
-use RawPHP\RawBase\TestModel;
+namespace RawPHP\RawBase\Exceptions;
 
 /**
- * Model test class.
+ * Exception used when a model is invalid in some way.
  * 
  * @category  PHP
- * @package   RawPHP/RawBase/Models/Tests
- * @author    Tom Kaczocha <tom@rawphp.org>
+ * @package   RawPHP/RawBase/Exceptions
+ * @author    Tom Kaczohca <tom@rawphp.org>
  * @copyright 2014 Tom Kaczocha
  * @license   http://rawphp.org/license.txt MIT
  * @link      http://rawphp.org/
  */
-class ModelTest extends \PHPUnit_Framework_TestCase
+class InvalidModelException extends RawException
 {
-    /**
-     * @var TestModel
-     */
-    protected $model = NULL;
-    
-    /**
-     * Setup before each test.
-     */
-    public function setUp()
-    {
-        parent::setUp();
-        
-        $this->model = new TestModel( );
-    }
-    
-    /**
-     * Cleanup after each test.
-     */
-    public function tearDown()
-    {
-        parent::tearDown();
-        
-        $this->model = NULL;
-    }
-    
-    /**
-     * Test initialisating a model.
-     */
-    public function testModelInstantiation( )
-    {
-        $this->model->init( );
-        
-        $this->assertNotNull( $this->model );
-    }
-    
-    /**
-     * Test initialising a model with configuration array.
-     */
-    public function testModelInstantiationWithConfig( )
-    {
-        $this->model->init( array( 'id' => 1 ) );
-        
-        $this->assertEquals( 1, $this->model->id );
-    }
 }

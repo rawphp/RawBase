@@ -33,9 +33,10 @@
  * @link      http://rawphp.org/
  */
 
-namespace RawPHP\RawBase;
+namespace RawPHP\RawBase\Tests;
 
 use RawPHP\RawBase\TestComponent;
+use RawPHP\RawBase\Component;
 
 /**
  * Component test class.
@@ -106,11 +107,11 @@ class ComponentTest extends \PHPUnit_Framework_TestCase
         $action = 'test_action';
         
         $this->component->addAction( $action, array( $this, '' ), 10 );
-        $this->component->addAction( $action, array( $this, '' ),  1 );
-        $this->component->addAction( $action, array( $this, '' ),  5 );
+        $this->component->addAction( $action, array( $this, '' ), 1 );
+        $this->component->addAction( $action, array( $this, '' ), 5 );
         
-        $this->assertEquals( 1,  $this->component->actions[ $action ][ 0 ][ 'priority' ] );
-        $this->assertEquals( 5,  $this->component->actions[ $action ][ 1 ][ 'priority' ] );
+        $this->assertEquals( 1, $this->component->actions[ $action ][ 0 ][ 'priority' ] );
+        $this->assertEquals( 5, $this->component->actions[ $action ][ 1 ][ 'priority' ] );
         $this->assertEquals( 10, $this->component->actions[ $action ][ 2 ][ 'priority' ] );
     }
     
@@ -277,6 +278,10 @@ class ComponentTest extends \PHPUnit_Framework_TestCase
     
     /**
      * Test valid index.
+     * 
+     * @param mixed $array  array or string
+     * @param int   $index  the position index
+     * @param bool  $result TRUE or FALSE
      * 
      * @dataProvider indexDataProvider
      */
