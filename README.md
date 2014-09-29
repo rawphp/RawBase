@@ -4,7 +4,7 @@
 [![Latest Stable Version](https://poser.pugx.org/rawphp/raw-base/v/stable.svg)](https://packagist.org/packages/rawphp/raw-base) [![Total Downloads](https://poser.pugx.org/rawphp/raw-base/downloads.svg)](https://packagist.org/packages/rawphp/raw-base)
 [![Latest Unstable Version](https://poser.pugx.org/rawphp/raw-base/v/unstable.svg)](https://packagist.org/packages/rawphp/raw-base) [![License](https://poser.pugx.org/rawphp/raw-base/license.svg)](https://packagist.org/packages/rawphp/raw-base)
 
-[![SensioLabsInsight](https://insight.sensiolabs.com/projects/72e28fe1-3b0f-4af5-86a1-fdfd955dea61/big.png)](https://insight.sensiolabs.com/projects/72e28fe1-3b0f-4af5-86a1-fdfd955dea61)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/fdc46b90-ef47-4fb5-a2a6-c48a599f4d0c/big.png)](https://insight.sensiolabs.com/projects/fdc46b90-ef47-4fb5-a2a6-c48a599f4d0c)
 
 ## Package Features
 - The Component class offers a hook system that can be implemented by all subclasses.
