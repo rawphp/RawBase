@@ -52,16 +52,6 @@ abstract class Model extends Component
     public $id = 0;
 
     /**
-     * Constructs a new instance of a model.
-     *
-     * @param array $config configuration array
-     */
-    public function __construct( $config = NULL )
-    {
-        parent::__construct( $config );
-    }
-
-    /**
      * Initialises the model.
      *
      * @param array $config configuration array
