@@ -2,19 +2,19 @@
 
 /**
  * This file is part of RawPHP - a PHP Framework.
- * 
+ *
  * Copyright (c) 2014 RawPHP.org
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in all
  * copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -22,9 +22,9 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  * PHP version 5.3
- * 
+ *
  * @category  PHP
  * @package   RawPHP/RawBase/Tests
  * @author    Tom Kaczohca <tom@rawphp.org>
@@ -39,7 +39,7 @@ use RawPHP\RawBase\TestModel;
 
 /**
  * Model test class.
- * 
+ *
  * @category  PHP
  * @package   RawPHP/RawBase/Models/Tests
  * @author    Tom Kaczocha <tom@rawphp.org>
@@ -53,44 +53,44 @@ class ModelTest extends \PHPUnit_Framework_TestCase
      * @var TestModel
      */
     protected $model = NULL;
-    
+
     /**
      * Setup before each test.
      */
-    public function setUp()
+    public function setUp( )
     {
-        parent::setUp();
-        
+        parent::setUp( );
+
         $this->model = new TestModel( );
     }
-    
+
     /**
      * Cleanup after each test.
      */
-    public function tearDown()
+    public function tearDown( )
     {
-        parent::tearDown();
-        
+        parent::tearDown( );
+
         $this->model = NULL;
     }
-    
+
     /**
      * Test initialisating a model.
      */
     public function testModelInstantiation( )
     {
         $this->model->init( );
-        
+
         $this->assertNotNull( $this->model );
     }
-    
+
     /**
      * Test initialising a model with configuration array.
      */
     public function testModelInstantiationWithConfig( )
     {
         $this->model->init( array( 'id' => 1 ) );
-        
+
         $this->assertEquals( 1, $this->model->id );
     }
 }
